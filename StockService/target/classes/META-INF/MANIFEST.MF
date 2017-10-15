@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: StockService
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: SagarikaPC
+Implementation-Vendor-Id: com.stock.service
+Build-Jdk: 1.8.0_144
+Implementation-URL: http://projects.spring.io/spring-boot/StockService
+ /
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
