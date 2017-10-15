@@ -1,0 +1,71 @@
+<div>
+<B>Enter any Stock Symbol<br></B>
+<input  type = "text" (input)="stock=$event.target.value" />
+</div>
+<br>
+<div>
+<button class="btn btn-primary" (click)="getStockSymbol(stock)" type="button">Find Stock</button>
+</div>
+
+<div *ngIf="gotresult==true" >
+<div *ngIf="SearchResult" >
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+<table>
+  <tr>
+    <th colspan="2">Stock Details</th>
+  </tr>
+  <tr>
+  <td>Stock Name</td>
+    <td>{{SearchResult.name}}</td>
+  </tr>
+  
+<tr>
+    <td>Stock Exchange Symbol</td>
+    <td>{{SearchResult.stockExchange}}</td>
+  </tr>
+  <tr>
+    <td>Stock Currency</td>
+    <td>{{SearchResult.currency}}</td>
+  </tr>
+  <tr>
+    <td>Total Market Cap Value</td>
+    <td>{{SearchResult.stats.marketCap}}</td>
+  </tr>
+  
+<tr>
+    <td>Total number of OutStanding Share</td>
+    <td>{{SearchResult.stats.sharesOutstanding}}</td>
+  </tr>
+  
+  <tr>
+  	<td>Total number of  Floating Share </td>
+  	<td>{{SearchResult.stats.sharesFloat}}</td>
+  </tr>
+  <tr>
+  	<td>Previous Close Value </td>
+  	<td>{{SearchResult.quote.previousClose}}</td>
+  </tr>
+  <tr>
+  	<td>Last Year Lowest Value</td>
+  	<td>{{SearchResult.quote.yearLow}}</td>
+  </tr>
+  <tr>
+  	<td>Last Year Highest Value </td>
+  	<td>{{SearchResult.quote.yearHigh}}</td>
+  </tr>
+  <tr>
+  <td> One Year Average Price</td>
+  <td>{{SearchResult.stats.oneYearTargetPrice}}</td>
+  </tr> 
+</table>
+</div>
+</div>
+<div *ngIf ="gotresult==false" >
+<div class = "alert alert-danger">
+<strong> The Stock is not found </strong>>
+</div>
+</div>
